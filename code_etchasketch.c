@@ -2,14 +2,13 @@
 
 Written by Montek Singh
 Copyright and all rights reserved by Montek Singh
-Last Updated:  April 4, 2025
+Last Updated:  Apr 6, 2025
 
 Permission granted to use this only for students, teaching/learning assistants
 and instructors of the COMP 541 course at UNC Chapel Hill.
 For any other use, contact Montek Singh first.
 
 */
-
 
 /*
 
@@ -126,8 +125,8 @@ int get_accelY();
 	// returns Y tilt value (increases right-to-left)
 
 void put_sound(int period);
-	// visually shows approximate sound tone generated
-	// you will not hear a sound, but see the tone highlighted on a sound bar
+	// puts a standard bell sound regardless of period
+	// this is a poor approximation, but at least you will hear a beep
 
 void sound_off();
 	// turns sound off
@@ -147,8 +146,34 @@ void initialize_IO(char* smem_initfile);
 int main() {
 	initialize_IO("smem.mem");
 
-	
+	int row1 = 15, row2 = 15;
+	int col1 = 20, col2 = 30;
+	int key1 = 0,  key2 = 0;
+	int key1new, key2new;
 
+	for(int i=0;i<512;i++) {
+		put_sound(950000 - 1600*i);
+		put_leds(i);
+
+		putChar_atXY(1, col1, row1);
+		putChar_atXY(2, col2, row2);
+		pause_and_getkey_2player(10, &key1new, &key2new);
+		if(key1new != 0) key1 = key1new;
+		if(key2new != 0) key2 = key2new;
+
+		switch (key1) {
+		case 1: col1--; if(col1<0) col1=0; break;
+		case 2: col1++; if(col1>39) col1=39; break;
+		case 3: row1--; if(row1<0) row1=0; break;
+		case 4: row1++; if(row1>29) row1=29; break;
+		}
+		switch (key2) {
+		case 1: col2--; if(col2<0) col2=0; break;
+		case 2: col2++; if(col2>39) col2=39; break;
+		case 3: row2--; if(row2<0) row2=0; break;
+		case 4: row2++; if(row2>29) row2=29; break;
+		}
+	}
 }
 
 
