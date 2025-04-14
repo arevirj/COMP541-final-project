@@ -212,7 +212,7 @@ int main() {
 		p2loss = getChar_atXY(col2, row2) != 0;
 
 		if(p1loss | p2loss){
-			if(wincheck(p1win, p2win)){
+			if(wincheck(p1loss, p2loss)){
 				my_pause(100);
 				return(1);
 			}
