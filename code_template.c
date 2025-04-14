@@ -150,10 +150,13 @@ int main() {
 	int row1 = 15, row2 = 15;
 	int col1 = 10, col2 = 30;
 
-	int key1 = 0, key2 = 0;
+	int key1 = 2, key2 = 1;
 	int key1new, key2new;
 	
 	while(1){
+
+
+
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
 		pause_and_getkey_2player(10, &key1new, &key2new);
