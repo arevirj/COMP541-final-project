@@ -184,7 +184,7 @@ int main() {
 	int key1new, key2new;
 
 	int gamestart = 0;
-	int endgame = 0; //0 = no loser, 1 = player1loss, 2 = player2loss, 3 = tie;
+	int endgame = 0; //0 = no loser, 1 = player1loss, 2 = player2loss, 3 = tie
 	
 	while(1){
 		//COUNTDOWN
@@ -206,7 +206,10 @@ int main() {
 				return 1;
 			}
 		}
-		if(endgame==1) initialize_IO("player2win.mem"); my_pause(200); return 1;
+		if(endgame==1){ 
+			initialize_IO("player2win.mem"); 
+			my_pause(200); 
+			return 1;}
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
