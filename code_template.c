@@ -73,9 +73,9 @@ enum colors {black, red, green, yellow, blue, magenta, cyan, white};
 
 sprite_attr sprite_attributes[Nchars] = {
 	{' ', black, black},
-	{' ', white, blue},
+	{'-', black, white},
 	{' ', black, red},
-	{' ', black, black}
+	{' ', white, blue}
 };
 
 
@@ -154,7 +154,7 @@ int main() {
 	int key1new, key2new;
 	
 	while(1){
-		putChar_atXY(1, col1, row1);
+		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
 		pause_and_getkey_2player(10, &key1new, &key2new);
 		if(key1new != 0) key1 = key1new;
