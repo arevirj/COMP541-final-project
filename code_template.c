@@ -197,16 +197,16 @@ int main() {
 		}
 		if(getChar_atXY(col1, row1) != 0){
 			if(endgame == 1){
-				initialize_smem("tie.mem");
+				initialize_IO("tie.mem");
 				my_pause(200);
 				return 1;
 			} else{
-				initialize_smem("player1_win.mem");
+				initialize_IO("player1_win.mem");
 				my_pause(200);
 				return 1;
 			}
 		}
-		if(endgame==1) initialize_smem("player2win.mem"); return 1;
+		if(endgame==1) initialize_IO("player2win.mem"); my_pause(200); return 1;
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
