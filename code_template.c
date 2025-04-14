@@ -145,7 +145,7 @@ void initialize_IO(char* smem_initfile);
 
 
 int main() {
-	initialize_IO("smem.mem");
+	initialize_IO("tron_board.mem");
 	
 	int row1 = 15, row2 = 15;
 	int col1 = 20, col2 = 30;
