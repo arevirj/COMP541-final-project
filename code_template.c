@@ -195,18 +195,18 @@ int main() {
 		if(getChar_atXY(col1, row1) != 0){
 			endgame = 1;
 		}
-		if(getChar_atXY(col1, row1) != 0){
+		if(getChar_atXY(col2, row2) != 0){
 			if(endgame == 1){
 				printf("Tie")
-				return 1;
+				return;
 			} else{
 				printf("Player1win");
-				return 1;
+				return;
 			}
 		}
 		if(endgame==1){ 
 			printf("player2win"); 
-			return 1;}
+			return;}
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
