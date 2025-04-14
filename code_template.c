@@ -145,29 +145,26 @@ void initialize_IO(char* smem_initfile);
 
 
 void countdown(){
-	for(int i = 0; i < 200; i++){
-		//3
-		if(i==0){
-			putChar_atXY(1, 20, 14); putChar_atXY(1, 21, 14);
-									 putChar_atXY(1, 21, 15);
-			putChar_atXY(1, 20, 16); putChar_atXY(1, 21, 16);
-									 putChar_atXY(1, 21, 17);
-			putChar_atXY(1, 20, 18); putChar_atXY(1, 21, 18);
-		}
-		//2
-		else if (i == 66){
-			putChar_atXY(0, 21, 17);
-			putChar_atXY(1, 20, 17);
-		}
-		//1
-		else if (i == 130){
-			putChar_atXY(0, 20, 14);
-			putChar_atXY(0, 20, 16);
-			putChar_atXY(1, 21, 17);
-			putChar_atXY(0, 20, 17);
-			putChar_atXY(0, 20, 18);
-		}
-	}
+	//3
+	putChar_atXY(1, 20, 14); putChar_atXY(1, 21, 14);
+								putChar_atXY(1, 21, 15);
+	putChar_atXY(1, 20, 16); putChar_atXY(1, 21, 16);
+								putChar_atXY(1, 21, 17);
+	putChar_atXY(1, 20, 18); putChar_atXY(1, 21, 18);
+	my_pause(100)
+
+	//2
+	putChar_atXY(0, 21, 17);
+	putChar_atXY(1, 20, 17);
+	my_pause(100)
+	//1
+	putChar_atXY(0, 20, 14);
+	putChar_atXY(0, 20, 16);
+	putChar_atXY(1, 21, 17);
+	putChar_atXY(0, 20, 17);
+	putChar_atXY(0, 20, 18);
+	my_pause(100)
+
 	//Ready for gameplay
 	putChar_atXY(0, 21, 14);
 	putChar_atXY(0, 21, 15);
