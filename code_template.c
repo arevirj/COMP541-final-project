@@ -174,6 +174,19 @@ void countdown(){
 	putChar_atXY(0, 21, 16);
 }
 
+int wincheck(int p1, int p2){
+		if(p1 & p2){
+			initialize_IO("tie.mem");
+			return(1);
+		} else if(p2){
+			initialize_IO("player1_win.mem");
+			return(1);
+		}else{
+		initialize_IO("player2_win.mem"); 
+		return(1);}	
+};
+
+
 int main() {
 	initialize_IO("tron_board.mem");
 	
@@ -185,6 +198,8 @@ int main() {
 
 	int gamestart = 0;
 	int endgame = 0; //0 = no loser, 1 = player1loss, 2 = player2loss, 3 = tie
+	int p1loss = 0;
+	int p2loss = 0;
 	
 	while(1){
 		//COUNTDOWN
@@ -192,8 +207,15 @@ int main() {
 		countdown();
 		gamestart = 1;
 	}
-		if(getChar_atXY(col1, row1) != 0){
-			endgame = 1;
+
+		p1loss = getChar_atXY(col1, row1) != 0;
+		p2loss = getChar_atXY(col2, row2) != 0;
+
+		if(p1loss | p2loss){
+			if(wincheck(p1win, p2win)){
+				my_pause(100);
+				return(1);
+			}
 		}
 		if(getChar_atXY(col2, row2) != 0){
 			if(endgame == 1){
