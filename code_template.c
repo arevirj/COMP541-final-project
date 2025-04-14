@@ -197,10 +197,10 @@ int main() {
 		}
 		if(getChar_atXY(col2, row2) != 0){
 			if(endgame == 1){
-				initialize_IO("tie.mem")
+				initialize_IO("tie.mem");
 				return(1);
 			} else{
-				initialize_IO("player1_win.mem")
+				initialize_IO("player1_win.mem");
 				return(1);
 			}
 		}
