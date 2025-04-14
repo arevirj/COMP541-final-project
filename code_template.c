@@ -159,35 +159,7 @@ int main() {
 
 		//COUNTDOWN
 		if(gamestart == 0){
-		for(int i = 0; i < 100; i++){
-			//3
-			if(i==0){
-				putChar_atXY(1, 20, 14); putChar_atXY(1, 21, 14);
-										 putChar_atXY(1, 21, 15);
-				putChar_atXY(1, 20, 16); putChar_atXY(1, 21, 16);
-										 putChar_atXY(1, 21, 17);
-				putChar_atXY(1, 20, 18); putChar_atXY(1, 21, 18);
-			}
-			//2
-			else if (i == 33){
-				putChar_atXY(0, 21, 17);
-				putChar_atXY(1, 20, 17);
-			}
-			//1
-			else if (i == 67){
-				putChar_atXY(0, 20, 14);
-				putChar_atXY(0, 20, 16);
-				putChar_atXY(1, 21, 17);
-				putChar_atXY(0, 20, 17);
-				putChar_atXY(0, 20, 18);
-			}
-		}
-		//Ready for gameplay
-		putChar_atXY(0, 21, 14);
-		putChar_atXY(0, 21, 15);
-		putChar_atXY(0, 21, 16);
-		putChar_atXY(0, 21, 17);
-		putChar_atXY(0, 21, 18);
+		countdown();
 		gamestart = 1;
 	}
 
@@ -237,6 +209,38 @@ int main() {
 		}
 	}	
 
+}
+
+void countdown(){
+	for(int i = 0; i < 100; i++){
+		//3
+		if(i==0){
+			putChar_atXY(1, 20, 14); putChar_atXY(1, 21, 14);
+									 putChar_atXY(1, 21, 15);
+			putChar_atXY(1, 20, 16); putChar_atXY(1, 21, 16);
+									 putChar_atXY(1, 21, 17);
+			putChar_atXY(1, 20, 18); putChar_atXY(1, 21, 18);
+		}
+		//2
+		else if (i == 33){
+			putChar_atXY(0, 21, 17);
+			putChar_atXY(1, 20, 17);
+		}
+		//1
+		else if (i == 67){
+			putChar_atXY(0, 20, 14);
+			putChar_atXY(0, 20, 16);
+			putChar_atXY(1, 21, 17);
+			putChar_atXY(0, 20, 17);
+			putChar_atXY(0, 20, 18);
+		}
+	}
+	//Ready for gameplay
+	putChar_atXY(0, 21, 14);
+	putChar_atXY(0, 21, 15);
+	putChar_atXY(0, 21, 16);
+	putChar_atXY(0, 21, 17);
+	putChar_atXY(0, 21, 18);
 }
 
 
