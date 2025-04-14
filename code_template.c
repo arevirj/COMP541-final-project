@@ -152,10 +152,41 @@ int main() {
 
 	int key1 = 2, key2 = 1;
 	int key1new, key2new;
+
+	int gamestart = 0;
 	
 	while(1){
 
-
+		//COUNTDOWN
+		for(int i = 0; i < 15; i++){
+			//3
+			if(i==0){
+				putChar_atXY(1, 20, 14); putChar_atXY(1, 21, 14);
+										 putChar_atXY(1, 21, 15);
+				putChar_atXY(1, 20, 16); putChar_atXY(1, 21, 16);
+										 putChar_atXY(1, 21, 17);
+				putChar_atXY(1, 20, 18); putChar_atXY(1, 21, 18);
+			}
+			//2
+			else if (i == 5){
+				putChar_atXY(0, 21, 17);
+				putCHar_atXY(1, 20, 17);
+			}
+			//1
+			else if (i == 10){
+				putChar_atXY(0, 20, 14);
+				putChar_atXY(0, 20, 16);
+				putChar_atXY(1, 21, 17);
+				putChar_atXY(0, 20, 17);
+				putChar_atXY(0, 20, 18);
+			}
+		}
+		//Ready for gameplay
+		putChar_atXY(0, 21, 14);
+		putChar_atXY(0, 21, 15);
+		putChar_atXY(0, 21, 16);
+		putChar_atXY(0, 21, 17);
+		putChar_atXY(0, 21, 18);
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
