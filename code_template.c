@@ -76,7 +76,7 @@ sprite_attr sprite_attributes[Nchars] = {
 	{'-', black, white},
 	{' ', black, red},
 	{' ', white, blue},
-	{' ', yellow, yellow}
+	{' ', magenta, magenta}
 };
 
 
