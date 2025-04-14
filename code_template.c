@@ -158,6 +158,7 @@ int main() {
 	while(1){
 
 		//COUNTDOWN
+		if(gamestart == 0){
 		for(int i = 0; i < 15; i++){
 			//3
 			if(i==0){
@@ -170,7 +171,7 @@ int main() {
 			//2
 			else if (i == 5){
 				putChar_atXY(0, 21, 17);
-				putCHar_atXY(1, 20, 17);
+				putChar_atXY(1, 20, 17);
 			}
 			//1
 			else if (i == 10){
@@ -187,6 +188,8 @@ int main() {
 		putChar_atXY(0, 21, 16);
 		putChar_atXY(0, 21, 17);
 		putChar_atXY(0, 21, 18);
+		gamestart = 1;
+	}
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
