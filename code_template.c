@@ -197,16 +197,16 @@ int main() {
 		}
 		if(getChar_atXY(col2, row2) != 0){
 			if(endgame == 1){
-				printf("Tie")
-				return;
+				initialize_IO("tie.mem")
+				return(1);
 			} else{
-				printf("Player1win");
-				return;
+				initialize_IO("player1_win.mem")
+				return(1);
 			}
 		}
 		if(endgame==1){ 
-			printf("player2win"); 
-			return;}
+			initialize_IO("player2_win.mem"); 
+			return(1);}
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
