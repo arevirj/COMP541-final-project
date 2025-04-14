@@ -159,7 +159,7 @@ int main() {
 
 		//COUNTDOWN
 		if(gamestart == 0){
-		for(int i = 0; i < 30; i++){
+		for(int i = 0; i < 100; i++){
 			//3
 			if(i==0){
 				putChar_atXY(1, 20, 14); putChar_atXY(1, 21, 14);
@@ -169,12 +169,12 @@ int main() {
 				putChar_atXY(1, 20, 18); putChar_atXY(1, 21, 18);
 			}
 			//2
-			else if (i == 10){
+			else if (i == 33){
 				putChar_atXY(0, 21, 17);
 				putChar_atXY(1, 20, 17);
 			}
 			//1
-			else if (i == 20){
+			else if (i == 67){
 				putChar_atXY(0, 20, 14);
 				putChar_atXY(0, 20, 16);
 				putChar_atXY(1, 21, 17);
