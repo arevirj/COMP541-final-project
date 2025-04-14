@@ -217,6 +217,10 @@ int main() {
 				return(1);
 			}
 		}
+		if(col1 == col2 && row1 == row2){
+			initialize_IO("tie.mem");
+			return(1);
+		}
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
