@@ -195,8 +195,29 @@ int main() {
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
 		pause_and_getkey_2player(10, &key1new, &key2new);
-		if(key1new != 0) key1 = key1new;
-		if(key2new != 0) key2 = key2new;
+		if(key1new != 0){
+			if(key1 == 1 || key1 == 2){
+				if (key1new == 3 || key1new == 4){
+					key1 = key1new;
+				}
+			} else{
+				if(key1new == 1 || key1new == 2){
+					key1 = key1new;
+				}
+			}
+		} 
+		if(key2new != 0){
+			if(key2 == 1 || key2 == 2){
+				if (key2new == 3 || key2new == 4){
+					key2 = key2new;
+				}
+			}else{
+				if(key2new == 1 || key2new == 2){
+					key2 = key2new;
+				}
+			}
+
+		} 
 		
 		switch(key1){
 		case 1: 
