@@ -148,7 +148,7 @@ int main() {
 	initialize_IO("tron_board.mem");
 	
 	int row1 = 15, row2 = 15;
-	int col1 = 10, col2 = 30;
+	int col1 = 7, col2 = 33;
 
 	int key1 = 2, key2 = 1;
 	int key1new, key2new;
