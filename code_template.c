@@ -74,7 +74,7 @@ enum colors {black, red, green, yellow, blue, magenta, cyan, white};
 sprite_attr sprite_attributes[Nchars] = {
 	{' ', black, black},
 	{' ', white, blue},
-	{'O', black, red},
+	{' ', black, red},
 	{' ', black, black}
 };
 
