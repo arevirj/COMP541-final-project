@@ -67,7 +67,7 @@ typedef struct {
 } sprite_attr;
 
 
-#define Nchars 4
+#define Nchars 5
 
 enum colors {black, red, green, yellow, blue, magenta, cyan, white};
 
@@ -75,7 +75,8 @@ sprite_attr sprite_attributes[Nchars] = {
 	{' ', black, black},
 	{'-', black, white},
 	{' ', black, red},
-	{' ', white, blue}
+	{' ', white, blue},
+	{' ', yellow, yellow}
 };
 
 
@@ -173,7 +174,6 @@ void countdown(){
 	putChar_atXY(0, 21, 16);
 }
 
-
 int main() {
 	initialize_IO("tron_board.mem");
 	
@@ -184,6 +184,7 @@ int main() {
 	int key1new, key2new;
 
 	int gamestart = 0;
+	int endgame = 0; //0 = no loser, 1 = player1loss, 2 = player2loss, 3 = tie;
 	
 	while(1){
 		//COUNTDOWN
@@ -191,6 +192,21 @@ int main() {
 		countdown();
 		gamestart = 1;
 	}
+		if(getChar_atXY(col1, row1) != 0){
+			endgame = 1;
+		}
+		if(getChar_atXY(col1, row1) != 0){
+			if(endgame == 1){
+				initialize_smem("tie.mem");
+				my_pause(200);
+				return 1;
+			} else{
+				initialize_smem("player1_win.mem");
+				my_pause(200);
+				return 1;
+			}
+		}
+		if(endgame==1) initialize_smem("player2win.mem"); return 1;
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
