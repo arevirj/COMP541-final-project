@@ -161,17 +161,41 @@ int main() {
 		if(key2new != 0) key2 = key2new;
 		
 		switch(key1){
-		case 1: col1--; if(col1<0) col1=0; break;
-		case 2: col1++; if(col1>39) col1=39; break;
-		case 3: row1--; if(row1<0) row1=0; break;
-		case 4: row1++; if(row1>29) row1=29; break;
+		case 1: 
+			col1--; 
+			if(col1<0) col1=0; 
+			break;
+		case 2: 
+			col1++; 
+			if(col1>39) col1=39; 
+			break;
+		case 3: 
+			row1--; 
+			if(row1<0) row1=0;
+			break;
+		case 4: 
+			row1++; 
+			if(row1>29) row1=29; 
+			break;
 		}
 
 		switch(key2){
-                case 1: col2--; if(col2<0) col2=0; break;
-                case 2: col2++; if(col2>39) col2=39; break;
-                case 3: row2--; if(row2<0) row2=0; break;
-                case 4: row2++; if(row2>29) row2=29; break;
+			case 1: 
+				col2--; 
+				if(col2<0) col2=0; 
+					break;
+			case 2: 
+				col2++; 
+				if(col2>39) col2=39; 
+				break;
+			case 3: 
+				row2--; 
+				if(row2<0) row2=0;
+				 break;
+			case 4: 
+				row2++; 
+				if(row2>29) row2=29; 
+				break;
 
 		}
 	}	
