@@ -150,6 +150,7 @@ int main() {
 	int col1 = 20, col2 = 30;
 	int key1 = 0,  key2 = 0;
 	int key1new, key2new;
+	int tempcol = 0, temprow = 0;
 
 	for(int i=0;i<512;i++) {
 		put_sound(950000 - 1600*i);
@@ -162,10 +163,11 @@ int main() {
 		if(key2new != 0) key2 = key2new;
 
 		switch (key1) {
-		case 1: col1--; if(col1<0) col1=0; break;
-		case 2: col1++; if(col1>39) col1=39; break;
-		case 3: row1--; if(row1<0) row1=0; break;
-		case 4: row1++; if(row1>29) row1=29; break;
+		case 0: break;
+		case 1: tempcol = col1; col1--; if(col1<0) col1=0; putChar_atXY(0, tempcol, row1); break;
+		case 2: tempcol = col1; col1++; if(col1>39) col1=39; putChar_atXY(0, tempcol, row1);  break;
+		case 3: temprow = row1;  row1--; if(row1<0) row1=0; putChar_atXY(0, col1, temprow);  break;
+		case 4: temprow = row1;  row1++; if(row1>29) row1=29; putChar_atXY(0, col1, temprow); break;
 		}
 		switch (key2) {
 		case 1: col2--; if(col2<0) col2=0; break;
