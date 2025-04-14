@@ -217,18 +217,6 @@ int main() {
 				return(1);
 			}
 		}
-		if(getChar_atXY(col2, row2) != 0){
-			if(endgame == 1){
-				initialize_IO("tie.mem");
-				return(1);
-			} else{
-				initialize_IO("player1_win.mem");
-				return(1);
-			}
-		}
-		if(endgame==1){ 
-			initialize_IO("player2_win.mem"); 
-			return(1);}
 
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
