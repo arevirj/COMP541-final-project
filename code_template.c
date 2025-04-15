@@ -150,7 +150,7 @@ int note_things[] = { // These are *halfnotes* above the actual notes, i.e., mid
 	233928, 220799, 208406, 196710, 185669, 175248, 165412, 156128 										//A4-A#4 to E5-F5
 };
 
-int game_song [] = {7, 7, 19, 7, 7, 17, 7, 7, 19, 7, 7, 21, 7, 7, 22, 7, 7, 19, 7, 7, 17, 7, 7, 15, 14, 12, 10, 8, 7, 20, 19};
+int game_song [] = {7, 7, 19, 7, 7, 17, 7, 7, 19, 7, 7, 21, 7, 7, 22, 22,7, 7, 19, 7, 7, 17, 7, 7, 15, 14, 12, 10, 8, 7, 20, 19};
 
 void countdown(){
 	//3
@@ -208,13 +208,13 @@ int main() {
 	int p1loss = 0;
 	int p2loss = 0;
 	int song_period = 0;
-	int song_length = sizeof(game_song)/sizeof(game_song[0]);
+	int song_length = (sizeof(game_song)/sizeof(game_song[0])) * 2;
 	int song_indexer = 0;
 	
 	while(1){
 		song_period = song_indexer >> 1;
-		if(song_period == song_length){
-			song_period == 0;
+		if(song_indexer == song_length){
+			song_indexer == 0;
 		}
 		put_sound(note_things[game_song[song_period]]);
 		song_indexer++;
