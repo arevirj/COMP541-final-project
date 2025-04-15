@@ -326,7 +326,7 @@ int main() {
 		initialize_IO("player2_win.mem");
 		return(1);
 	}
-	put_leds(p1_score << 15);
+	put_leds(15);
 	game_loop();
 }
 
