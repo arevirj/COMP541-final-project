@@ -150,7 +150,7 @@ int note_things[] = { // These are *halfnotes* above the actual notes, i.e., mid
 	233928, 220799, 208406, 196710, 185669, 175248, 165412, 156128 										//A4-A#4 to E5-F5
 };
 
-int game_song [] = {7, 7, 19, 7, 7, 17, 7, 7, 19, 7, 7, 21, 7, 7, 22, 22,7, 7, 19, 7, 7, 17, 7, 7, 15, 14, 12, 10, 8, 7, 20, 19};
+int game_song [] = {7, 7, 19, 19, 7, 17, 17, 7, 19, 19, 7, 21, 21, 7, 22, 22, 7, 7, 19, 19, 7, 17, 17, 7, 15, 14, 12, 10, 8, 7, 20, 19};
 
 
 
@@ -251,7 +251,6 @@ int p2_led_vals[] = {0, 1, 2, 4, 8};
 int led_val = 0;
 
 int wincheck(int p1, int p2){
-	put_sound(5000);
 	sound_off();
 		if(p1 & p2){
 			return(1);
@@ -303,6 +302,7 @@ int game_loop(){
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
 		if(col1 == col2 && row1 == row2){
+			sound_off();
 			my_pause(100);
 			wipe_board();
 			return(1);
