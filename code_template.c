@@ -248,6 +248,7 @@ void score_display(){
 		i++;
 	}
 	my_pause(150);
+	wipe_board();
 
 }
 
