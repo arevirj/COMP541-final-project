@@ -182,8 +182,8 @@ void countdown(){
 }
 
 void wipe_board(){
-	for(int i = 0; i < 39; i++){
-		for(int j = 0; j < 29; j++){
+	for(int i = 1; i < 39; i++){
+		for(int j = 1; j < 29; j++){
 			putChar_atXY(0, i, j);
 		}
 	}
@@ -195,7 +195,6 @@ int p2_score = 0;
 int wincheck(int p1, int p2){
 	sound_off();
 		if(p1 & p2){
-			initialize_IO("tie.mem");
 			return(1);
 		} else if(p2){
 			
@@ -324,6 +323,8 @@ int main() {
 		initialize_IO("player2_win.mem");
 		return(1);
 	}
+	put_leds(p1_score);
+	put_leds(16-p2_score);
 	game_loop();
 }
 
