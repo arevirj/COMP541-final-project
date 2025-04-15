@@ -231,7 +231,7 @@ void score_display(){
 		int i = 0;
 		for(int row = 12; row < 17; row++){
 			int j = 0;
-			putChar_atXY(score[p1_score][j][i], col, row)
+			putChar_atXY(score[p1_score][j][i], col, row);
 			j++;
 		}
 		i++;
@@ -242,7 +242,7 @@ void score_display(){
 		int i = 0;
 		for(int row = 12; row < 17; row++){
 			int j = 0;
-			putChar_atXY(score[p1_score][j][i], col, row)
+			putChar_atXY(score[p1_score][j][i], col, row);
 			j++;
 		}
 		i++;
