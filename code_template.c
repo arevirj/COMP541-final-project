@@ -251,7 +251,6 @@ int game_loop(){
 			wipe_board();
 			return(1);
 		}
-	}
 		
 		pause_and_getkey_2player(10, &key1new, &key2new);
 		if(key1new != 0){
