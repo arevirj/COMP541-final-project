@@ -237,16 +237,16 @@ int game_loop(){
 				return(1);
 			}
 		}
+		
+	}
+		putChar_atXY(3, col1, row1);
+		putChar_atXY(2, col2, row2);
 		if(col1 == col2 && row1 == row2){
 			if(wincheck(p1loss, p2loss)){
 				my_pause(100);
 				wipe_board();
 			return(1);
 		}
-	}
-
-		putChar_atXY(3, col1, row1);
-		putChar_atXY(2, col2, row2);
 		pause_and_getkey_2player(10, &key1new, &key2new);
 		if(key1new != 0){
 			if(key1 == 1 || key1 == 2){
@@ -325,8 +325,7 @@ int main() {
 		initialize_IO("player2_win.mem");
 		return(1);
 	}
-	put_leds(p1_score);
-	put_leds(16-p2_score);
+	put_leds(p1_score + 1);
 	game_loop();
 }
 
