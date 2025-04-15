@@ -181,8 +181,7 @@ void countdown(){
 	putChar_atXY(0, 21, 16);
 }
 
-int wincheck(int p1, int p2){
-		put_sound(note_things[330825]);
+int wincheck(int p1, int p2){}
 		if(p1 & p2){
 			initialize_IO("tie.mem");
 			return(1);
