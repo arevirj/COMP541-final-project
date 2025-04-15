@@ -227,25 +227,21 @@ int score[4][5][2] = {
 };
 
 void score_display(){
-	for(int col = 17; col < 19; col++){
-		int i = 0;
-		for(int row = 12; row < 17; row++){
-			int j = 0;
-			putChar_atXY(score[p1_score][j][i], col, row);
+	int col1 = 17;
+	int col2 = 22;
+	for(int i = 0; i < 2; i++){
+		for(int j = 0; j < 5; j++){
+			putChar_atXY(score[p1_score][j][i], i + col1, j + 12);
 			j++;
 		}
 		i++;
 	}
 	putChar_atXY(1, 20, 14);
 	putChar_atXY(1, 21, 14);
-	for(int col = 22; col < 24; col++){
-		int i = 0;
-		for(int row = 12; row < 17; row++){
-			int j = 0;
-			putChar_atXY(score[p2_score][j][i], col, row);
-			j++;
+	for(int i = 0; i < 2; i++){
+		for(int j = 0; j < 5; j++){
+			putChar_atXY(score[p2_score][j][i], i + col2, j + 12);
 		}
-		i++;
 	}
 	my_pause(150);
 	wipe_board();
