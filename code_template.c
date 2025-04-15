@@ -237,8 +237,7 @@ int game_loop(){
 				return(1);
 			}
 		}
-		
-	}
+
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
 		if(col1 == col2 && row1 == row2){
@@ -247,6 +246,8 @@ int game_loop(){
 				wipe_board();
 			return(1);
 		}
+	}
+		
 		pause_and_getkey_2player(10, &key1new, &key2new);
 		if(key1new != 0){
 			if(key1 == 1 || key1 == 2){
@@ -330,7 +331,6 @@ int main() {
 }
 
 }
-
 
 // The file below has the implementation of all of the helper functions
 #include "procs.c"
