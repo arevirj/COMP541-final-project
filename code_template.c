@@ -197,7 +197,6 @@ int wincheck(int p1, int p2){
 		if(p1 & p2){
 			return(1);
 		} else if(p2){
-			
 			p1_score++;
 			return(1);
 		}else{
@@ -239,7 +238,6 @@ int game_loop(){
 			}
 		}
 		if(col1 == col2 && row1 == row2){
-			initialize_IO("tie.mem");
 			return(1);
 		}
 
