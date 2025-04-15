@@ -251,6 +251,7 @@ int p2_led_vals[] = {0, 1, 2, 4, 8};
 int led_val = 0;
 
 int wincheck(int p1, int p2){
+	put_sound(5000);
 	sound_off();
 		if(p1 & p2){
 			return(1);
