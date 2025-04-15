@@ -202,7 +202,7 @@ int main() {
 	int p2loss = 0;
 	
 	while(1){
-		put_sound(note_intervals[key1])
+		put_sound(note_intervals[key1]);
 		//COUNTDOWN
 		if(gamestart == 0){
 		countdown();
