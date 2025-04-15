@@ -202,11 +202,11 @@ int wincheck(int p1, int p2){
 			return(1);
 		} else if(p2){
 			p1_score++;
-			led_val = led_val + p1_led_vals[p1_score]
+			led_val = led_val + p1_led_vals[p1_score];
 			return(1);
 		}else{
 		p2_score++; 
-		led_val = led_val + p2_led_vals[p2_score]
+		led_val = led_val + p2_led_vals[p2_score];
 		return(1);}	
 };
 
