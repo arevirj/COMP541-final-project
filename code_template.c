@@ -227,9 +227,9 @@ int score[4][5][2] = {
 };
 
 void score_display(){
-	for(int col = 17, col < 19, col++){
+	for(int col = 17; col < 19; col++){
 		int i = 0;
-		for(int row = 12, row < 17, row++){
+		for(int row = 12; row < 17; row++){
 			int j = 0;
 			putChar_atXY(score[p1_score][j][i], col, row)
 			j++;
@@ -238,9 +238,9 @@ void score_display(){
 	}
 	putChar_atXY(1, 20, 14);
 	putChar_atXY(1, 21, 14);
-	for(int col = 22, col < 24, col++){
+	for(int col = 22; col < 24; col++){
 		int i = 0;
-		for(int row = 12, row < 17, row++){
+		for(int row = 12; row < 17; row++){
 			int j = 0;
 			putChar_atXY(score[p1_score][j][i], col, row)
 			j++;
