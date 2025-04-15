@@ -214,7 +214,7 @@ int main() {
 	while(1){
 		song_period = song_indexer >> 1;
 		if(song_indexer == song_length){
-			song_indexer == 0;
+			song_indexer = 0;
 		}
 		put_sound(note_things[game_song[song_period]]);
 		song_indexer++;
