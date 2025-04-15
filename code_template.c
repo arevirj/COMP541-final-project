@@ -232,9 +232,7 @@ void score_display(){
 	for(int i = 0; i < 2; i++){
 		for(int j = 0; j < 5; j++){
 			putChar_atXY(score[p1_score][j][i], i + col1, j + 12);
-			j++;
 		}
-		i++;
 	}
 	putChar_atXY(1, 20, 14);
 	putChar_atXY(1, 21, 14);
