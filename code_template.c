@@ -224,7 +224,7 @@ int score[4][5][2] = {
 		{1, 1}
 	},
 
-}
+};
 
 void score_display(){
 	for(int col = 17, col < 19, col++){
