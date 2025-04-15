@@ -152,6 +152,8 @@ int note_things[] = { // These are *halfnotes* above the actual notes, i.e., mid
 
 int game_song [] = {7, 7, 19, 7, 7, 17, 7, 7, 19, 7, 7, 21, 7, 7, 22, 22,7, 7, 19, 7, 7, 17, 7, 7, 15, 14, 12, 10, 8, 7, 20, 19};
 
+
+
 void countdown(){
 	//3
 	putChar_atXY(1, 20, 12); putChar_atXY(1, 21, 12);
@@ -187,10 +189,67 @@ void wipe_board(){
 			putChar_atXY(0, i, j);
 		}
 	}
-}
+};
 
 int p1_score = 0;
 int p2_score = 0;
+
+int score[4][5][2] = {
+	{
+		{0, 0},
+		{0, 0},
+		{1, 1},
+		{0, 0},
+		{0, 0}
+	},
+	{
+		{0, 1},
+		{0, 1},
+		{0, 1},
+		{0, 1},
+		{0, 1}
+	},
+	{
+		{1, 1},
+		{0, 1},
+		{1, 1},
+		{1, 0},
+		{1, 1}
+	},
+	{
+		{1, 1},
+		{0, 1},
+		{1, 1},
+		{0, 1},
+		{1, 1}
+	},
+
+}
+
+void score_display(){
+	for(int col = 17, col < 19, col++){
+		int i = 0;
+		for(int row = 12, row < 17, row++){
+			int j = 0;
+			putChar_atXY(score[p1_score][j][i], col, row)
+			j++;
+		}
+		i++;
+	}
+	putChar_atXY(1, 20, 14);
+	putChar_atXY(1, 21, 14);
+	for(int col = 22, col < 24, col++){
+		int i = 0;
+		for(int row = 12, row < 17, row++){
+			int j = 0;
+			putChar_atXY(score[p1_score][j][i], col, row)
+			j++;
+		}
+		i++;
+	}
+	my_pause(150);
+
+}
 
 int p1_led_vals[] = {0, 32768, 16384, 8192, 4096};
 int p2_led_vals[] = {0, 1, 2, 4, 8};
@@ -224,6 +283,7 @@ int game_loop(){
 	int song_length = (sizeof(game_song)/sizeof(game_song[0])) * 2;
 	int song_indexer = 0;
 	
+	score_display();
 	countdown(); 
 
 	while(1){
