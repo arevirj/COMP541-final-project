@@ -208,11 +208,11 @@ int main() {
 	int p1loss = 0;
 	int p2loss = 0;
 	int song_period = 0;
-	int song_length = sizeof(game_song)/sizeof(game_song[0])
+	int song_length = sizeof(game_song)/sizeof(game_song[0]);
 	int song_indexer = 0;
 	
 	while(1){
-		song_period = song_indexer << 12;
+		song_period = song_indexer >> 8;
 		if(song_period == song_length){
 			song_period == 0;
 		}
