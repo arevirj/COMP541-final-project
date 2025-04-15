@@ -150,6 +150,8 @@ int note_things[] = { // These are *halfnotes* above the actual notes, i.e., mid
 	233928, 220799, 208406, 196710, 185669, 175248, 165412, 156128 										//A4-A#4 to E5-F5
 };
 
+int game_song [] = {7, 7, 19, 7, 7, 17, 7, 7, 19, 7, 7, 21, 7, 7, 22, 7, 7, 19, 7, 7, 17, 7, 7, 15, 14, 12, 10, 8, 7, 20, 19}
+
 void countdown(){
 	//3
 	putChar_atXY(1, 20, 12); putChar_atXY(1, 21, 12);
@@ -205,14 +207,22 @@ int main() {
 	int endgame = 0; //0 = no loser, 1 = player1loss, 2 = player2loss, 3 = tie
 	int p1loss = 0;
 	int p2loss = 0;
+	int song_period = 0;
+	int song_length = sizeof(game_song)/sizeof(game_song[0])
+	int song_indexer = 0;
 	
 	while(1){
-		put_sound(note_things[key1]);
+		song_period = song_indexer << 12;
+		if(song_period == song_length){
+			song_period == 0;
+		}
+		put_sound(note_things[song_period]);
+		song_indexer++;
 		//COUNTDOWN
 		if(gamestart == 0){
 		countdown();
 		gamestart = 1;
-	}
+		}
 
 		p1loss = getChar_atXY(col1, row1) != 0;
 		p2loss = getChar_atXY(col2, row2) != 0;
