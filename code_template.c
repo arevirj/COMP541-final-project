@@ -182,6 +182,7 @@ void countdown(){
 }
 
 int wincheck(int p1, int p2){
+	sound_off();
 		if(p1 & p2){
 			initialize_IO("tie.mem");
 			return(1);
@@ -211,6 +212,8 @@ int main() {
 	int song_length = (sizeof(game_song)/sizeof(game_song[0])) * 2;
 	int song_indexer = 0;
 	
+	countdown(); 
+
 	while(1){
 		song_period = song_indexer >> 1;
 		if(song_indexer == song_length){
@@ -218,11 +221,6 @@ int main() {
 		}
 		put_sound(note_things[game_song[song_period]]);
 		song_indexer++;
-		//COUNTDOWN
-		if(gamestart == 0){
-		countdown();
-		gamestart = 1;
-		}
 
 		p1loss = getChar_atXY(col1, row1) != 0;
 		p2loss = getChar_atXY(col2, row2) != 0;
