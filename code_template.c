@@ -184,7 +184,7 @@ void countdown(){
 void wipe_board(){
 	for(int i = 0; i < 39; i++){
 		for(int j = 0; j < 29; j++){
-			if(putChar_atXY(0, i, j))
+			putChar_atXY(0, i, j);
 		}
 	}
 }
