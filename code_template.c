@@ -212,7 +212,7 @@ int main() {
 	int song_indexer = 0;
 	
 	while(1){
-		song_period = song_indexer >> 2;
+		song_period = song_indexer >> 1;
 		if(song_period == song_length){
 			song_period == 0;
 		}
