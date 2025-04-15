@@ -144,11 +144,11 @@ void initialize_IO(char* smem_initfile);
 // This is the code for your demo app!
 //===============================================================
 
-int note_intervals[] = { // These are *halfnotes* above the actual notes, i.e., midpoints between consecutive notes
+int note_things[] = { // These are *halfnotes* above the actual notes, i.e., midpoints between consecutive notes
 	935713, 883196, 833626, 786838, 742676, 700993, 661649, 624514, 589463, 556379, 525151, 495677, 	//A2-A#2 to G#3-A3
 	467857, 441598, 416813, 393419, 371338, 350497, 330825, 312257, 294731, 278189, 262576, 247838, 	//A3-A#3 to G#4-A4
 	233928, 220799, 208406, 196710, 185669, 175248, 165412, 156128 										//A4-A#4 to E5-F5
-}
+};
 
 void countdown(){
 	//3
@@ -207,7 +207,7 @@ int main() {
 	int p2loss = 0;
 	
 	while(1){
-		put_sound(note_intervals[key1]);
+		put_sound(note_things[key1]);
 		//COUNTDOWN
 		if(gamestart == 0){
 		countdown();
