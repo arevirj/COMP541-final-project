@@ -182,7 +182,7 @@ void countdown(){
 }
 
 int wincheck(int p1, int p2){
-		put_sound(note_things[330825])
+		put_sound(note_things[330825]);
 		if(p1 & p2){
 			initialize_IO("tie.mem");
 			return(1);
