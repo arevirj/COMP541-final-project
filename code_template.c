@@ -212,11 +212,11 @@ int main() {
 	int song_indexer = 0;
 	
 	while(1){
-		song_period = song_indexer >> 3;
+		song_period = song_indexer >> 2;
 		if(song_period == song_length){
 			song_period == 0;
 		}
-		put_sound(note_things[song_period]);
+		put_sound(game_song[song_period]);
 		song_indexer++;
 		//COUNTDOWN
 		if(gamestart == 0){
