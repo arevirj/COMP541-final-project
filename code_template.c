@@ -191,6 +191,9 @@ void wipe_board(){
 	}
 };
 
+//p1 win wipe board
+//p2 win wipe board
+
 int p1_score = 0;
 int p2_score = 0;
 
@@ -380,11 +383,11 @@ int main() {
 	while(1){
 	
 	if(p1_score ==4){
-		initialize_IO("player1_win.mem");
+		
 		return(1);
 	}
 	if(p2_score == 4){
-		initialize_IO("player2_win.mem");
+		
 		return(1);
 	}
 	put_leds(led_val);
