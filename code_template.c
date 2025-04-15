@@ -304,9 +304,9 @@ int game_loop(){
 }
 
 int main() {
-
-	while(1){
 	initialize_IO("tron_board.mem");
+	while(1){
+	
 	if(p1_score ==4){
 		initialize_IO("player1_win.mem");
 		return(1);
