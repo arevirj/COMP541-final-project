@@ -188,38 +188,36 @@ int wincheck(int p1, int p2){
 			return(1);
 		} else if(p2){
 			initialize_IO("player1_win.mem");
+			p1_score++;
 			return(1);
 		}else{
-		initialize_IO("player2_win.mem"); 
+		initialize_IO("player2_win.mem");
+		p2_score++; 
 		return(1);}	
 };
 
+int p1_score = 0;
+int p2_score = 0;
 
-int main() {
-	initialize_IO("tron_board.mem");
-	
+int game_loop(){
 	int row1 = 15, row2 = 15;
 	int col1 = 7, col2 = 33;
 
 	int key1 = 2, key2 = 1;
 	int key1new, key2new;
 
-	int gamestart = 0;
-	int endgame = 0; //0 = no loser, 1 = player1loss, 2 = player2loss, 3 = tie
 	int p1loss = 0;
 	int p2loss = 0;
-	int song_period = 0;
 	int song_length = (sizeof(game_song)/sizeof(game_song[0])) * 2;
 	int song_indexer = 0;
 	
 	countdown(); 
 
 	while(1){
-		song_period = song_indexer >> 1;
 		if(song_indexer == song_length){
 			song_indexer = 0;
 		}
-		put_sound(note_things[game_song[song_period]]);
+		put_sound(note_things[game_song[song_indexer >> 1]]);
 		song_indexer++;
 
 		p1loss = getChar_atXY(col1, row1) != 0;
@@ -301,7 +299,21 @@ int main() {
 				break;
 
 		}
-	}	
+	}
+}
+
+int main() {
+
+	while(1){
+	initialize_IO("tron_board.mem");
+	if(p1_score ==4){
+		return(1);
+	}
+	if(p2_score == 4){
+		return(1);
+	}
+	game_loop();
+}
 
 }
 
