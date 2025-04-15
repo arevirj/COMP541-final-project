@@ -247,9 +247,8 @@ int game_loop(){
 		putChar_atXY(3, col1, row1);
 		putChar_atXY(2, col2, row2);
 		if(col1 == col2 && row1 == row2){
-			if(wincheck(p1loss, p2loss)){
-				my_pause(100);
-				wipe_board();
+			my_pause(100);
+			wipe_board();
 			return(1);
 		}
 	}
