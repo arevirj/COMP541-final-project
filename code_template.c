@@ -275,7 +275,7 @@ int game_loop(){
 
 	int p1loss = 0;
 	int p2loss = 0;
-	int song_length = (sizeof(game_song)/sizeof(game_song[0])) * 2;
+	int song_length = 64;
 	int song_indexer = 0;
 	
 	score_display();
