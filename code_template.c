@@ -190,11 +190,10 @@ int wincheck(int p1, int p2){
 			initialize_IO("tie.mem");
 			return(1);
 		} else if(p2){
-			initialize_IO("player1_win.mem");
+			
 			p1_score++;
 			return(1);
 		}else{
-		initialize_IO("player2_win.mem");
 		p2_score++; 
 		return(1);}	
 };
@@ -309,9 +308,11 @@ int main() {
 	while(1){
 	initialize_IO("tron_board.mem");
 	if(p1_score ==4){
+		initialize_IO("player1_win.mem");
 		return(1);
 	}
 	if(p2_score == 4){
+		initialize_IO("player2_win.mem");
 		return(1);
 	}
 	game_loop();
