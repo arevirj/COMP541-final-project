@@ -181,6 +181,9 @@ void countdown(){
 	putChar_atXY(0, 21, 16);
 }
 
+int p1_score = 0;
+int p2_score = 0;
+
 int wincheck(int p1, int p2){
 	sound_off();
 		if(p1 & p2){
@@ -196,8 +199,7 @@ int wincheck(int p1, int p2){
 		return(1);}	
 };
 
-int p1_score = 0;
-int p2_score = 0;
+
 
 int game_loop(){
 	int row1 = 15, row2 = 15;
