@@ -192,15 +192,21 @@ void wipe_board(){
 int p1_score = 0;
 int p2_score = 0;
 
+int p1_led_vals[] = {0, 32768, 16384, 8192, 4096};
+int p2_led_vals[] = {0, 1, 2, 4, 8};
+int led_val = 0;
+
 int wincheck(int p1, int p2){
 	sound_off();
 		if(p1 & p2){
 			return(1);
 		} else if(p2){
 			p1_score++;
+			led_val = led_val + p1_led_vals[p1_score]
 			return(1);
 		}else{
 		p2_score++; 
+		led_val = led_val + p2_led_vals[p2_score]
 		return(1);}	
 };
 
@@ -313,12 +319,10 @@ int game_loop(){
 		}
 	}
 }
-int p1_led_vals[] = {0, 32768, 16384, 8192, 4096};
-int p2_led_vals[] = {0, 1, 2, 4, 8};
+
 
 int main() {
 	initialize_IO("tron_board.mem");
-	int led_val = 0;
 	while(1){
 	
 	if(p1_score ==4){
@@ -329,7 +333,7 @@ int main() {
 		initialize_IO("player2_win.mem");
 		return(1);
 	}
-	put_leds(led_val = p1_led_vals[p1_score] + p2_led_vals[p2_score]);
+	put_leds(led_val);
 	game_loop();
 }
 
