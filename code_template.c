@@ -313,9 +313,12 @@ int game_loop(){
 		}
 	}
 }
+int p1_led_vals[] = {0, 32768, 16384, 8192, 4096};
+int p2_led_vals[] = {0, 1, 2, 4, 8};
 
 int main() {
 	initialize_IO("tron_board.mem");
+	int led_val = 0;
 	while(1){
 	
 	if(p1_score ==4){
@@ -326,7 +329,7 @@ int main() {
 		initialize_IO("player2_win.mem");
 		return(1);
 	}
-	put_leds(65000);
+	put_leds(led_val = p1_led_vals[p1_score] + p2_led_vals[p2_score]);
 	game_loop();
 }
 
