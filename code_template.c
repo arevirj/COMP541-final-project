@@ -181,6 +181,14 @@ void countdown(){
 	putChar_atXY(0, 21, 16);
 }
 
+void wipe_board(){
+	for(int i = 0; i < 39; i++){
+		for(int j = 0; j < 29; j++){
+			if(putChar_atXY(0, i, j))
+		}
+	}
+}
+
 int p1_score = 0;
 int p2_score = 0;
 
@@ -227,6 +235,7 @@ int game_loop(){
 		if(p1loss | p2loss){
 			if(wincheck(p1loss, p2loss)){
 				my_pause(100);
+				wipe_board();
 				return(1);
 			}
 		}
