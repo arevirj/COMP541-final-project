@@ -217,7 +217,6 @@ int main() {
 			song_indexer = 0;
 		}
 		put_sound(note_things[game_song[song_period]]);
-		sound_off();
 		song_indexer++;
 		//COUNTDOWN
 		if(gamestart == 0){
