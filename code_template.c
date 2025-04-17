@@ -76,7 +76,9 @@ sprite_attr sprite_attributes[Nchars] = {
 	{'-', black, white},
 	{' ', black, red},
 	{' ', white, blue},
-	{' ', magenta, magenta}
+	{' ', magenta, magenta},
+	{'0', white, blue},
+	{'0', white, red}
 };
 
 
@@ -273,6 +275,9 @@ int game_loop(){
 	int row1 = 15, row2 = 15;
 	int col1 = 7, col2 = 33;
 
+	int row1prev = 15, row2prev = 15;
+	int col1prev = 7, col2prev = 33;
+
 	int key1 = 2, key2 = 1;
 	int key1new, key2new;
 
@@ -302,8 +307,12 @@ int game_loop(){
 			}
 		}
 
-		putChar_atXY(3, col1, row1);
-		putChar_atXY(2, col2, row2);
+		putChar_atXY(3, col1prev, row1prev);
+		purChar_atXY(2, col2prev, row2prev);
+
+		putChar_atXY(5, col1, row1);
+		putChar_atXY(6, col2, row2);
+		
 		if(col1 == col2 && row1 == row2){
 			sound_off();
 			my_pause(100);
@@ -337,19 +346,23 @@ int game_loop(){
 		} 
 		
 		switch(key1){
-		case 1: 
+		case 1:
+			col1prev = col1;
 			col1--; 
 			if(col1<0) col1=0; 
 			break;
 		case 2: 
+			col1prev = col1;
 			col1++; 
 			if(col1>39) col1=39; 
 			break;
 		case 3: 
+			row1prev = row1;
 			row1--; 
 			if(row1<0) row1=0;
 			break;
 		case 4: 
+			row1prev = row1;
 			row1++; 
 			if(row1>29) row1=29; 
 			break;
@@ -357,18 +370,22 @@ int game_loop(){
 
 		switch(key2){
 			case 1: 
+				col2prev = col2;
 				col2--; 
 				if(col2<0) col2=0; 
 					break;
 			case 2: 
+				col2prev = col2;
 				col2++; 
 				if(col2>39) col2=39; 
 				break;
 			case 3: 
+				row2prev = row2;
 				row2--; 
 				if(row2<0) row2=0;
 				 break;
 			case 4: 
+				row2prev = row2;
 				row2++; 
 				if(row2>29) row2=29; 
 				break;
@@ -387,7 +404,7 @@ int main() {
 		return(1);
 	}
 	if(p2_score == 4){
-		
+
 		return(1);
 	}
 	put_leds(led_val);
