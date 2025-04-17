@@ -77,8 +77,8 @@ sprite_attr sprite_attributes[Nchars] = {
 	{' ', black, red},
 	{' ', white, blue},
 	{' ', magenta, magenta},
-	{'0', white, white},
-	{'0', white, white}
+	{'0', white, blue},
+	{'0', white, red}
 };
 
 
@@ -347,25 +347,26 @@ int game_loop(){
 			}
 
 		} 
+
+		col1prev = col1;
+		col2prev = col2;
+		row1prev = row1;
+		row2prev = row2;
 		
 		switch(key1){
 		case 1:
-			col1prev = col1;
 			col1--; 
 			if(col1<0) col1=0; 
 			break;
 		case 2: 
-			col1prev = col1;
 			col1++; 
 			if(col1>39) col1=39; 
 			break;
 		case 3: 
-			row1prev = row1;
 			row1--; 
 			if(row1<0) row1=0;
 			break;
 		case 4: 
-			row1prev = row1;
 			row1++; 
 			if(row1>29) row1=29; 
 			break;
@@ -373,22 +374,18 @@ int game_loop(){
 
 		switch(key2){
 			case 1: 
-				col2prev = col2;
 				col2--; 
 				if(col2<0) col2=0; 
 					break;
 			case 2: 
-				col2prev = col2;
 				col2++; 
 				if(col2>39) col2=39; 
 				break;
 			case 3: 
-				row2prev = row2;
 				row2--; 
 				if(row2<0) row2=0;
 				 break;
 			case 4: 
-				row2prev = row2;
 				row2++; 
 				if(row2>29) row2=29; 
 				break;
