@@ -67,7 +67,7 @@ typedef struct {
 } sprite_attr;
 
 
-#define Nchars 5
+#define Nchars 7
 
 enum colors {black, red, green, yellow, blue, magenta, cyan, white};
 
@@ -307,12 +307,13 @@ int game_loop(){
 			}
 		}
 
-		putChar_atXY(5, col1, row1);
-		putChar_atXY(6, col2, row2);
+		
 		
 		putChar_atXY(3, col1prev, row1prev);
-		purChar_atXY(2, col2prev, row2prev);
+		putChar_atXY(2, col2prev, row2prev);
 
+		putChar_atXY(5, col1, row1);
+		putChar_atXY(6, col2, row2);
 		
 
 		if(col1 == col2 && row1 == row2){
