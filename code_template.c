@@ -307,6 +307,13 @@ int game_loop(){
 		put_sound(note_things[game_song[song_indexer >> 1]]);
 		song_indexer++;
 
+		if(col1 == col2 && row1 == row2){
+			sound_off();
+			my_pause(100);
+			wipe_board();
+			return(1);
+		}
+
 		p1loss = getChar_atXY(col1, row1) != 0;
 		p2loss = getChar_atXY(col2, row2) != 0;
 
@@ -325,14 +332,6 @@ int game_loop(){
 
 		putChar_atXY(5, col1, row1);
 		putChar_atXY(6, col2, row2);
-		
-
-		if(col1 == col2 && row1 == row2){
-			sound_off();
-			my_pause(100);
-			wipe_board();
-			return(1);
-		}
 		
 		pause_and_getkey_2player(10, &key1new, &key2new);
 		update_key(&key1, key1new);
