@@ -77,8 +77,8 @@ sprite_attr sprite_attributes[Nchars] = {
 	{' ', black, red},
 	{' ', white, blue},
 	{' ', magenta, magenta},
-	{'0', white, blue},
-	{'0', white, red}
+	{'0', white, white},
+	{'0', white, white}
 };
 
 
@@ -307,12 +307,14 @@ int game_loop(){
 			}
 		}
 
-		putChar_atXY(3, col1prev, row1prev);
-		purChar_atXY(2, col2prev, row2prev);
-
 		putChar_atXY(5, col1, row1);
 		putChar_atXY(6, col2, row2);
 		
+		putChar_atXY(3, col1prev, row1prev);
+		purChar_atXY(2, col2prev, row2prev);
+
+		
+
 		if(col1 == col2 && row1 == row2){
 			sound_off();
 			my_pause(100);
