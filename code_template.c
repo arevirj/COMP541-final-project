@@ -270,6 +270,17 @@ int wincheck(int p1, int p2){
 };
 
 
+void update_key(int *key, int newkey) {
+	if(newkey != 0) {
+		if(*key == 1 || *key == 2) {
+			if(newkey == 3 || newkey == 4) *key = newkey;
+		} else {
+			if(newkey == 1 || newkey == 2) *key = newkey;
+		}
+	}
+}
+
+
 
 int game_loop(){
 	int row1 = 15, row2 = 15;
@@ -324,29 +335,31 @@ int game_loop(){
 		}
 		
 		pause_and_getkey_2player(10, &key1new, &key2new);
-		if(key1new != 0){
-			if(key1 == 1 || key1 == 2){
-				if (key1new == 3 || key1new == 4){
-					key1 = key1new;
-				}
-			} else{
-				if(key1new == 1 || key1new == 2){
-					key1 = key1new;
-				}
-			}
-		} 
-		if(key2new != 0){
-			if(key2 == 1 || key2 == 2){
-				if (key2new == 3 || key2new == 4){
-					key2 = key2new;
-				}
-			}else{
-				if(key2new == 1 || key2new == 2){
-					key2 = key2new;
-				}
-			}
+		update_key(&key1, key1new);
+		update_key(&key2, key2new);
+		// if(key1new != 0){
+		// 	if(key1 == 1 || key1 == 2){
+		// 		if (key1new == 3 || key1new == 4){
+		// 			key1 = key1new;
+		// 		}
+		// 	} else{
+		// 		if(key1new == 1 || key1new == 2){
+		// 			key1 = key1new;
+		// 		}
+		// 	}
+		// } 
+		// if(key2new != 0){
+		// 	if(key2 == 1 || key2 == 2){
+		// 		if (key2new == 3 || key2new == 4){
+		// 			key2 = key2new;
+		// 		}
+		// 	}else{
+		// 		if(key2new == 1 || key2new == 2){
+		// 			key2 = key2new;
+		// 		}
+		// 	}
 
-		} 
+		// } 
 
 		col1prev = col1;
 		col2prev = col2;
