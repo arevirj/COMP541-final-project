@@ -301,11 +301,8 @@ int game_loop(){
 	countdown(); 
 
 	while(1){
-		if(song_indexer == song_length){
-			song_indexer = 0;
-		}
+		song_indexer = (song_indexer + 1) & (song_length -1);
 		put_sound(note_things[game_song[song_indexer >> 1]]);
-		song_indexer++;
 
 		if(col1 == col2 && row1 == row2){
 			sound_off();
@@ -336,29 +333,6 @@ int game_loop(){
 		pause_and_getkey_2player(10, &key1new, &key2new);
 		update_key(&key1, key1new);
 		update_key(&key2, key2new);
-		// if(key1new != 0){
-		// 	if(key1 == 1 || key1 == 2){
-		// 		if (key1new == 3 || key1new == 4){
-		// 			key1 = key1new;
-		// 		}
-		// 	} else{
-		// 		if(key1new == 1 || key1new == 2){
-		// 			key1 = key1new;
-		// 		}
-		// 	}
-		// } 
-		// if(key2new != 0){
-		// 	if(key2 == 1 || key2 == 2){
-		// 		if (key2new == 3 || key2new == 4){
-		// 			key2 = key2new;
-		// 		}
-		// 	}else{
-		// 		if(key2new == 1 || key2new == 2){
-		// 			key2 = key2new;
-		// 		}
-		// 	}
-
-		// } 
 
 		col1prev = col1;
 		col2prev = col2;
