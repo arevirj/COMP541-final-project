@@ -427,11 +427,11 @@ int main() {
 	initialize_IO("tron_board.mem");
 	while(1){
 	
-	if(p1_score ==1){
+	if(p1_score ==4){
 		p1_win_screen();
 		return(1);
 	}
-	if(p2_score == 1){
+	if(p2_score == 4){
 		p2_win_screen();
 		return(1);
 	}
