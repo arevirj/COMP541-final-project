@@ -199,6 +199,46 @@ void wipe_board(){
 int p1_score = 0;
 int p2_score = 0;
 
+int p1_win_screen[5][4] = {
+	{0, 0, 0, 3, 0, 3},
+	{0, 3, 0, 3, 0, 3},
+	{0, 0, 0, 3, 0, 3},
+	{0, 3, 3, 3, 0, 3},
+	{0, 3, 3, 3, 0, 3}
+
+}
+int p2_win_screen[5][4] = {
+	{0, 0, 0, 3, 0, 0},
+	{0, 3, 0, 3, 3, 0},
+	{0, 0, 0, 3, 0, 0},
+	{0, 3, 3, 3, 0, 3},
+	{0, 3, 3, 3, 0, 0}
+}
+
+void p1_win_board(){
+	for(int i = 0; i < 40; i++){
+		for(int j = 0; j < 30; j++){
+			if(i > 15 && i < 22 && j > 11 && j < 16){
+				putChar_atXY(p1_win_screen[j][i], i - 16, j - 12);
+			} else{
+				putChar_atXY(3, i, j);
+			}
+		}
+	}
+}
+
+void p2_win_board(){
+	for(int i = 0; i < 40; i++){
+		for(int j = 0; j < 30; j++){
+			if(i > 15 && i < 22 && j > 11 && j < 16){
+				putChar_atXY(p2_win_screen[j][i], i - 16, j - 12);
+			} else{
+				putChar_atXY(3, i, j);
+			}
+		}
+	}
+}
+
 int score[4][5][2] = {
 	{
 		{0, 0},
@@ -386,11 +426,11 @@ int main() {
 	while(1){
 	
 	if(p1_score ==4){
-		
+		p1_win_board();
 		return(1);
 	}
 	if(p2_score == 4){
-
+		p2_win_board();
 		return(1);
 	}
 	put_leds(led_val);
