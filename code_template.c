@@ -199,7 +199,7 @@ void wipe_board(){
 int p1_score = 0;
 int p2_score = 0;
 
-int p1_win_screen[5][6] = {
+int p1_win_board[5][6] = {
 	{0, 0, 0, 3, 0, 3},
 	{0, 3, 0, 3, 0, 3},
 	{0, 0, 0, 3, 0, 3},
@@ -207,7 +207,7 @@ int p1_win_screen[5][6] = {
 	{0, 3, 3, 3, 0, 3}
 
 };
-int p2_win_screen[5][6] = {
+int p2_win_board[5][6] = {
 	{0, 0, 0, 2, 0, 0},
 	{0, 2, 0, 2, 2, 0},
 	{0, 0, 0, 2, 0, 0},
@@ -215,11 +215,11 @@ int p2_win_screen[5][6] = {
 	{0, 2, 2, 2, 0, 0}
 };
 
-void p1_win_board(){
+void p1_win_screen(){
 	for(int i = 0; i < 40; i++){
 		for(int j = 0; j < 30; j++){
 			if(i > 15 && i < 22 && j > 11 && j < 17){
-				putChar_atXY(p1_win_screen[j - 12][i - 16], i, j);
+				putChar_atXY(p1_win_board[j - 12][i - 16], i, j);
 			} else{
 				putChar_atXY(3, i, j);
 			}
@@ -228,11 +228,11 @@ void p1_win_board(){
 	my_pause(100);
 }
 
-void p2_win_board(){
+void p2_win_screen(){
 	for(int i = 0; i < 40; i++){
 		for(int j = 0; j < 30; j++){
 			if(i > 15 && i < 22 && j > 11 && j < 17){
-				putChar_atXY(p2_win_screen[j - 12][i - 16], i, j);
+				putChar_atXY(p2_win_board[j - 12][i - 16], i, j);
 			} else{
 				putChar_atXY(2, i, j);
 			}
@@ -427,12 +427,12 @@ int main() {
 	initialize_IO("tron_board.mem");
 	while(1){
 	
-	if(p1_score ==4){
-		p1_win_board();
+	if(p1_score ==1){
+		p1_win_screen();
 		return(1);
 	}
-	if(p2_score == 4){
-		p2_win_board();
+	if(p2_score == 1){
+		p2_win_screen();
 		return(1);
 	}
 	put_leds(led_val);
