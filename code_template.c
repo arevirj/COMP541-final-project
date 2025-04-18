@@ -219,24 +219,26 @@ void p1_win_board(){
 	for(int i = 0; i < 40; i++){
 		for(int j = 0; j < 30; j++){
 			if(i > 15 && i < 22 && j > 11 && j < 16){
-				putChar_atXY(p1_win_screen[j][i], i - 16, j - 12);
+				putChar_atXY(p1_win_screen[j - 12][i - 16], i, j);
 			} else{
 				putChar_atXY(3, i, j);
 			}
 		}
 	}
+	my_pause(100);
 }
 
 void p2_win_board(){
 	for(int i = 0; i < 40; i++){
 		for(int j = 0; j < 30; j++){
 			if(i > 15 && i < 22 && j > 11 && j < 16){
-				putChar_atXY(p2_win_screen[j][i], i - 16, j - 12);
+				putChar_atXY(p2_win_screen[j - 12][i - 16], i, j);
 			} else{
 				putChar_atXY(3, i, j);
 			}
 		}
 	}
+	my_pause(100);
 }
 
 int score[4][5][2] = {
@@ -344,13 +346,6 @@ int game_loop(){
 		song_indexer = (song_indexer + 1) & (song_length -1);
 		put_sound(note_things[game_song[song_indexer >> 1]]);
 
-		if(col1 == col2 && row1 == row2){
-			sound_off();
-			my_pause(100);
-			wipe_board();
-			return(1);
-		}
-
 		p1loss = getChar_atXY(col1, row1) != 0;
 		p2loss = getChar_atXY(col2, row2) != 0;
 
@@ -369,6 +364,13 @@ int game_loop(){
 
 		putChar_atXY(5, col1, row1);
 		putChar_atXY(6, col2, row2);
+
+		if(col1 == col2 && row1 == row2){
+			sound_off();
+			my_pause(100);
+			wipe_board();
+			return(1);
+		}
 		
 		pause_and_getkey_2player(10, &key1new, &key2new);
 		update_key(&key1, key1new);
