@@ -208,17 +208,17 @@ int p1_win_screen[5][6] = {
 
 };
 int p2_win_screen[5][6] = {
-	{0, 0, 0, 3, 0, 0},
-	{0, 3, 0, 3, 3, 0},
-	{0, 0, 0, 3, 0, 0},
-	{0, 3, 3, 3, 0, 3},
-	{0, 3, 3, 3, 0, 0}
+	{0, 0, 0, 2, 0, 0},
+	{0, 2, 0, 2, 2, 0},
+	{0, 0, 0, 2, 0, 0},
+	{0, 2, 2, 2, 0, 2},
+	{0, 2, 2, 2, 0, 0}
 };
 
 void p1_win_board(){
 	for(int i = 0; i < 40; i++){
 		for(int j = 0; j < 30; j++){
-			if(i > 15 && i < 22 && j > 11 && j < 16){
+			if(i > 15 && i < 22 && j > 11 && j < 17){
 				putChar_atXY(p1_win_screen[j - 12][i - 16], i, j);
 			} else{
 				putChar_atXY(3, i, j);
@@ -231,7 +231,7 @@ void p1_win_board(){
 void p2_win_board(){
 	for(int i = 0; i < 40; i++){
 		for(int j = 0; j < 30; j++){
-			if(i > 15 && i < 22 && j > 11 && j < 16){
+			if(i > 15 && i < 22 && j > 11 && j < 17){
 				putChar_atXY(p2_win_screen[j - 12][i - 16], i, j);
 			} else{
 				putChar_atXY(3, i, j);
