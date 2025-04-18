@@ -234,7 +234,7 @@ void p2_win_board(){
 			if(i > 15 && i < 22 && j > 11 && j < 17){
 				putChar_atXY(p2_win_screen[j - 12][i - 16], i, j);
 			} else{
-				putChar_atXY(3, i, j);
+				putChar_atXY(2, i, j);
 			}
 		}
 	}
